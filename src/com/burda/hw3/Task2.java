@@ -12,9 +12,9 @@ public class Task2 {
             temp = symbol;
             if (symbol != '0') {
                 System.out.println("Введите первое число");
-                int Nu1 = scan.nextInt();
+                double Nu1 = scan.nextDouble();
                 System.out.println("Введите второе число");
-                int Nu2 = scan.nextInt();
+                double Nu2 = scan.nextDouble();
                 switch (symbol) {
                     case ('+'):
                         System.out.println(Nu1 + Nu2);
@@ -24,7 +24,7 @@ public class Task2 {
                         break;
                     case ('/'):
                         if (Nu2 != 0) {
-                            System.out.println(Nu1 / Nu2);
+                            System.out.println(Nu1/Nu2);
                         } else {
                             System.out.println("На ноль делить нельзя");
                         }
