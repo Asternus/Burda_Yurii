@@ -7,16 +7,14 @@ public class Task2 {
         char temp;
         do {
             System.out.println("Введите дейсвие: (* умножение, / - деление, - вычитание, + сложение) или введите 0 чтобы закончить вычесления");
-            Scanner ch = new Scanner(System.in);
-            char symbol = ch.next().charAt(0);
+            Scanner scan = new Scanner(System.in);
+            char symbol = scan.next().charAt(0);
             temp = symbol;
             if (symbol != '0') {
                 System.out.println("Введите первое число");
-                Scanner first = new Scanner(System.in);
-                int Nu1 = first.nextInt();
+                int Nu1 = scan.nextInt();
                 System.out.println("Введите второе число");
-                Scanner second = new Scanner(System.in);
-                int Nu2 = second.nextInt();
+                int Nu2 = scan.nextInt();
                 switch (symbol) {
                     case ('+'):
                         System.out.println(Nu1 + Nu2);
