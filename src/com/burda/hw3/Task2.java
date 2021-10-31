@@ -24,7 +24,7 @@ public class Task2 {
                         break;
                     case ('/'):
                         if (Nu2 != 0) {
-                            System.out.println(Nu1/Nu2);
+                            System.out.println(Nu1 / Nu2);
                         } else {
                             System.out.println("На ноль делить нельзя");
                         }
