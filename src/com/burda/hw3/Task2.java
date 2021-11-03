@@ -12,25 +12,25 @@ public class Task2 {
             temp = symbol;
             if (symbol != '0') {
                 System.out.println("Введите первое число");
-                double Nu1 = scan.nextDouble();
+                double nu1 = scan.nextDouble();
                 System.out.println("Введите второе число");
-                double Nu2 = scan.nextDouble();
+                double nu2 = scan.nextDouble();
                 switch (symbol) {
                     case ('+'):
-                        System.out.println(Nu1 + Nu2);
+                        System.out.println(nu1 + nu2);
                         break;
                     case ('*'):
-                        System.out.println(Nu1 * Nu2);
+                        System.out.println(nu1 * nu2);
                         break;
                     case ('/'):
-                        if (Nu2 != 0) {
-                            System.out.println(Nu1 / Nu2);
+                        if (nu2 != 0) {
+                            System.out.println(nu1 / nu2);
                         } else {
                             System.out.println("На ноль делить нельзя");
                         }
                         break;
                     case ('-'):
-                        System.out.println(Nu1 - Nu2);
+                        System.out.println(nu1 - nu2);
                         break;
                     default:
                         System.out.println("Вы ввели ошибочный символ");
