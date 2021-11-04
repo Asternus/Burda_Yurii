@@ -7,9 +7,8 @@ import java.util.Scanner;
 public class Task4 {
     public static void main(String[] args) {
         int temp;
-        int n = 0, c = 0;
+        Scanner scan = new Scanner(System.in);
         do {
-            Scanner scan = new Scanner(System.in);
             System.out.println("Введите целове число больше 3");
             int input = scan.nextInt();
             temp = input;
@@ -17,24 +16,28 @@ public class Task4 {
                 Random random = new Random();
                 int[] array = new int[input];
                 int even = 0;
-                for (int i = 0; i < array.length; i++) {
+                int i = 0;
+                while (i < array.length) {
                     array[i] = random.nextInt(input);
                     if (array[i] % 2 == 0) {
                         even++;
                     }
+                    i++;
                 }
                 System.out.println(Arrays.toString(array));
-
                 int[] array2 = new int[even];
+                int j = 0;
                 int index = 0;
-                for (int i = 0; i < array.length; i++) {
-                    if (array[i] % 2 == 0) {
-                        array2[index] = array[i];
+                while (j < array.length) {
+                    if (array[j] % 2 == 0) {
+                        array2[index] = array[j];
                         index++;
                     }
+                    j++;
                 }
-
                 System.out.println(Arrays.toString(array2));
+            } else {
+                System.out.println("Ошибка, выполните повторный ввод: ");
             }
         }
         while (temp < 3);
