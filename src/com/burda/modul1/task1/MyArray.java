@@ -13,12 +13,11 @@ public class MyArray {
         return arr;
     }
 
-
     public int getInput() {
         return input;
     }
 
-    public int[] arrayIn() {
+    private int[] arrayIn() {
         int[] array = new int[input];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
@@ -27,7 +26,7 @@ public class MyArray {
         return array;
     }
 
-    public void bubbleSort(int[] num) {
+    private void bubbleSortMax(int[] num) {
         int j;
         boolean flag = true;
         int temp;
@@ -44,7 +43,7 @@ public class MyArray {
         }
     }
 
-    public void bubbleSort2(int[] arr) {
+    private void bubbleSortMin(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -57,24 +56,30 @@ public class MyArray {
     }
 
     public void sortArray() {
-        System.out.println("Выберите способ сортировки: 1 - от меньшего к большему, 2 - от большего к меньшему");
-        Scanner scan = new Scanner(System.in);
-        int change = scan.nextInt();
-        switch (change) {
-            case (1):
-                bubbleSort2(arr);
-                System.out.println(Arrays.toString(arr));
-                break;
-            case (2):
-                bubbleSort(arr);
-                System.out.println(Arrays.toString(arr));
-                break;
-        }
+        String tem2;
+        do {
+            System.out.println("Выберите способ сортировки: введите 1 - от меньшего к большему, введите 2 - от большего к меньшему");
+            Scanner scan = new Scanner(System.in);
+            String change = scan.nextLine();
+            tem2 = change;
+            switch (change) {
+                case ("1"):
+                    bubbleSortMin(arr);
+                    System.out.println(Arrays.toString(arr));
+                    break;
+                case ("2"):
+                    bubbleSortMax(arr);
+                    System.out.println(Arrays.toString(arr));
+                    break;
+                default:
+                    System.out.println("Вы ввели ошибочный символ");
+            }
+        } while ((!"1".equals(tem2)) && (!"2".equals(tem2)));
     }
 
     public void cube() {
         for (int i = 2; i < arr.length; i += 3) {
-            arr[i] = (int) Math.pow (arr[i], 3);
+            arr[i] = (int) Math.pow(arr[i], 3);
         }
         System.out.println("Массив с кубическим значением каждого третьего: " + "\n" + Arrays.toString(arr));
     }
