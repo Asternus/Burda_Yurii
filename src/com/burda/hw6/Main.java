@@ -21,8 +21,6 @@ public class Main {
         Garage.checkСar(myCar);
         Garage.checkСar(myCar2);
 
-        // System.out.println(myCar.isEnoughPetrolLevel());
-        // System.out.println(myCar2.isEnoughPetrolLevel());
     }
 }
 

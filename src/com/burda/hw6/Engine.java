@@ -3,11 +3,6 @@ package com.burda.hw6;
 public class Engine {
 
     private double power;
-
-    public double getPower() {
-        return power;
-    }
-
     private String type;
 
     @Override
@@ -16,6 +11,10 @@ public class Engine {
                 "power=" + power +
                 ", type='" + type + '\'' +
                 '}';
+    }
+
+    public double getPower() {
+        return power;
     }
 
     public void setPower(double power) {

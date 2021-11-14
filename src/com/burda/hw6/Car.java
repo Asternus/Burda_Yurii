@@ -6,25 +6,16 @@ public class Car {
     private String colour;
     private double petrol;
 
-    public Engine getPowType() {
-        return powType;
-    }
-
     public Car(Manufacturer manufacturer, Engine powType, String colour) {
         this.manufacturer = manufacturer;
         this.powType = powType;
-        // this.engine = engine;
         this.colour = colour;
         this.petrol = 100;
     }
 
-    // public void setManufacturer(String manufacturer) {
-    // this.manufacturer = manufacturer;
-    // }
-
-    // public void setEngine(String engine) {
-    //  this.engine = engine;
-    // }
+    public Engine getPowType() {
+        return powType;
+    }
 
     public void setColour(String colour) {
         this.colour = colour;
