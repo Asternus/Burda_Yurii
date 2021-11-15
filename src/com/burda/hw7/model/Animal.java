@@ -10,6 +10,7 @@ public class Animal {
     private double clear;
     private double happy;
     private boolean sick;
+    private String presents;
 
     public Animal(String name, AnimalType type) {
         this.name = name;
@@ -20,6 +21,19 @@ public class Animal {
         this.clear = 100.0d;
         this.happy = 50.0d;
         this.sick = false;
+        this.presents = "";
+    }
+
+    public String getPresents() {
+        return presents;
+    }
+
+    public void setPresents(String presents) {
+        this.presents = presents;
+    }
+
+    public void addPresents(String presents) {
+        this.presents += " Подарок " + presents + ";";
     }
 
     public boolean isSick() {
@@ -109,6 +123,7 @@ public class Animal {
                 ", clear=" + clear +
                 ", happy=" + happy +
                 ", sick=" + sick +
+                ", collections=" + presents +
                 '}';
     }
 }

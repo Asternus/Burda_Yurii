@@ -13,7 +13,6 @@ public class Work {
             System.out.println("Error!");
             return;
         }
-
         if (animal.getHungry() < 50) {
             animal.addMoney(random.nextInt(20 - 5) + 5);
             animal.addHungry(-4.0 * 1.5d);
