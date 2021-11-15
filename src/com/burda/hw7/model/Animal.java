@@ -2,23 +2,32 @@ package com.burda.hw7.model;
 
 public class Animal {
 
-
     private final String name;
     private final AnimalType type;
     private int age;
     private double hungry;
     private int money;
-    private int clear;
+    private double clear;
     private double happy;
+    private boolean sick;
 
     public Animal(String name, AnimalType type) {
         this.name = name;
         this.type = type;
         this.age = 1;
-        this.hungry = 100;
+        this.hungry = 100.0d;
         this.money = 0;
-        this.clear = 100;
-        this.happy = 50;
+        this.clear = 100.0d;
+        this.happy = 50.0d;
+        this.sick = false;
+    }
+
+    public boolean isSick() {
+        return sick;
+    }
+
+    public void setSick(boolean sick) {
+        this.sick = sick;
     }
 
     public String getName() {
@@ -65,15 +74,15 @@ public class Animal {
         this.money += money;
     }
 
-    public int getClear() {
+    public double getClear() {
         return clear;
     }
 
-    public void setClear(int clear) {
+    public void setClear(double clear) {
         this.clear = clear;
     }
 
-    public void addClear(int clear) {
+    public void addClear(double clear) {
         this.clear += clear;
     }
 
@@ -99,6 +108,7 @@ public class Animal {
                 ", money=" + money +
                 ", clear=" + clear +
                 ", happy=" + happy +
+                ", sick=" + sick +
                 '}';
     }
 }

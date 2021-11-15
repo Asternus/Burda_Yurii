@@ -1,5 +1,6 @@
 package com.burda.hw7.service;
 
+import com.burda.hw7.actions.Health;
 import com.burda.hw7.actions.Play;
 import com.burda.hw7.actions.Work;
 import com.burda.hw7.actions.Food;
@@ -13,6 +14,7 @@ public class UserInputService {
     private final Food food = new Food();
     private final Work work = new Work();
     private final Play play = new Play();
+    private final Health health = new Health();
 
     public Animal userInputAnimalTypeName() {
         System.out.println("Доступные типы персонажей: ");
@@ -42,6 +44,7 @@ public class UserInputService {
         builder.append(1).append(") Кормить\n");
         builder.append(2).append(") Работать\n");
         builder.append(3).append(") Играть\n");
+        builder.append(4).append(") Лечить\n");
 
         int userAction;
         do {
@@ -64,6 +67,10 @@ public class UserInputService {
                 }
                 case 3 : {
                     play.doAction(animal);
+                    break;
+                }
+                case 4 : {
+                    health.doAction(animal);
                     break;
                 }
                 default:
