@@ -1,5 +1,8 @@
 package com.burda.hw7.model;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Animal {
 
     private final String name;
@@ -10,7 +13,26 @@ public class Animal {
     private double clear;
     private double happy;
     private boolean sick;
-    private String presents;
+    private boolean unHappy;
+    private boolean unHungry;
+    private String gift;
+    private ArrayList<String> presents;
+
+    public boolean isUnHappy() {
+        return unHappy;
+    }
+
+    public void setUnHappy(boolean unHappy) {
+        this.unHappy = unHappy;
+    }
+
+    public boolean isUnHungry() {
+        return unHungry;
+    }
+
+    public void setUnHungry(boolean unHungry) {
+        this.unHungry = unHungry;
+    }
 
     public Animal(String name, AnimalType type) {
         this.name = name;
@@ -20,21 +42,25 @@ public class Animal {
         this.money = 0;
         this.clear = 100.0d;
         this.happy = 50.0d;
+        this.unHungry = false;
+        this.unHappy = false;
         this.sick = false;
-        this.presents = "";
+        this.gift = "";
+        this.presents = new ArrayList<>();
     }
 
-    public String getPresents() {
+    public ArrayList<String> getPresents() {
         return presents;
     }
 
-    public void setPresents(String presents) {
+    public void setPresents(ArrayList<String> presents) {
         this.presents = presents;
     }
 
-    public void addPresents(String presents) {
-        this.presents += " Подарок " + presents + ";";
+    public void addPresents(String gift) {
+        presents.add("Подарок " + gift);
     }
+
 
     public boolean isSick() {
         return sick;
@@ -123,7 +149,9 @@ public class Animal {
                 ", clear=" + clear +
                 ", happy=" + happy +
                 ", sick=" + sick +
-                ", collections=" + presents +
+                ", unHungry=" + unHungry +
+                ", unHappy=" + unHappy +
+                ", presents=" + presents +
                 '}';
     }
 }

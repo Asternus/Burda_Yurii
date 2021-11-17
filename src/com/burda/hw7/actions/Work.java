@@ -14,15 +14,31 @@ public class Work {
             return;
         }
         if (animal.getHungry() < 50) {
-            animal.addMoney(random.nextInt(20 - 5) + 5);
+            animal.setUnHungry(true);
+        }
+        if (animal.getHungry() > 50) {
+            animal.setUnHungry(false);
+        }
+        if (animal.getHappy() < 20) {
+            animal.setUnHappy(true);
+        }
+        if (animal.getHappy() > 20) {
+            animal.setUnHappy(false);
+        }
+
+        animal.addMoney(random.nextInt(20 - 5) + 5);
+
+        if ((animal.isUnHungry()) && (!animal.isSick())) {
             animal.addHungry(-4.0 * 1.5d);
             animal.addHappy(-4.0 * 1.5d);
-        } else if (animal.isSick()) {
-            animal.addMoney(random.nextInt(20 - 5) + 5);
+        } if (animal.isSick() && (!animal.isUnHungry())) {
             animal.addHungry(-4.0d * 2.0d);
             animal.addHappy(-4.0d * 2.0d);
-        } else {
-            animal.addMoney(random.nextInt(20 - 5) + 5);
+        } if ((animal.isSick()) && (animal.isUnHungry())) {
+            animal.addHungry(-4.0d * 2.0d * 1.5d);
+            animal.addHappy(-4.0d * 2.0d * 1.5d);
+        }
+        if ((!animal.isUnHungry()) && (!animal.isSick())) {
             animal.addHungry(-4.0d);
             animal.addHappy(-4.0d);
         }
