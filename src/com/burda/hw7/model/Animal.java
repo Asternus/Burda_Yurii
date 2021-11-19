@@ -44,7 +44,7 @@ public class Animal {
         this.type = type;
         this.age = 1;
         this.hungry = 100.0d;
-        this.money = 11000;
+        this.money = 0;
         this.clear = 100.0d;
         this.happy = 50.0d;
         this.unHungry = false;
