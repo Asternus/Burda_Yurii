@@ -13,48 +13,17 @@ public class Work {
             System.out.println("Error!");
             return;
         }
-        if (animal.getHungry() < 50) {
-            animal.setUnHungry(true);
-        }
-        if (animal.getHungry() > 50) {
-            animal.setUnHungry(false);
-        }
-        if (animal.getHappy() < 20) {
-            animal.setUnHappy(true);
-        }
-        if (animal.getHappy() > 20) {
-            animal.setUnHappy(false);
-        }
 
+        double index = 1 * animal.unHungryRet() * animal.isUnHappyRet() * animal.isSicRet();
         animal.addMoney(random.nextInt(20 - 5) + 5);
+        animal.addHungry(4.0d * index);
+        animal.addHappy(2.0d * index);
 
-        if ((animal.isUnHungry()) && (!animal.isSick())) {
-            animal.addHungry(-4.0 * 1.5d);
-            animal.addHappy(-4.0 * 1.5d);
-        } if (animal.isSick() && (!animal.isUnHungry())) {
-            animal.addHungry(-4.0d * 2.0d);
-            animal.addHappy(-4.0d * 2.0d);
-        } if ((animal.isSick()) && (animal.isUnHungry())) {
-            animal.addHungry(-4.0d * 2.0d * 1.5d);
-            animal.addHappy(-4.0d * 2.0d * 1.5d);
-        }
-        if ((!animal.isUnHungry()) && (!animal.isSick())) {
-            animal.addHungry(-4.0d);
-            animal.addHappy(-4.0d);
-        }
         if (++workCount == 6) {
             workCount = 0;
             animal.addAge(1);
         }
-        final int randomNumber = random.nextInt(100);
-        if (animal.getClear() < 50) {
-            if (randomNumber <= 30) {
-                animal.setSick(true);
-            }
-        } else {
-            if (randomNumber <= 10) {
-                animal.setSick(true);
-            }
-        }
+        animal.sick();
     }
 }
+

@@ -1,6 +1,6 @@
 package com.burda.hw7.model;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Animal {
@@ -15,8 +15,12 @@ public class Animal {
     private boolean sick;
     private boolean unHappy;
     private boolean unHungry;
-    private String gift;
-    private ArrayList<String> presents;
+    private String[] present;
+    final Random random = new Random();
+
+    public void setPresent(String[] present) {
+        this.present = present;
+    }
 
     public boolean isUnHappy() {
         return unHappy;
@@ -34,6 +38,7 @@ public class Animal {
         this.unHungry = unHungry;
     }
 
+
     public Animal(String name, AnimalType type) {
         this.name = name;
         this.type = type;
@@ -45,22 +50,63 @@ public class Animal {
         this.unHungry = false;
         this.unHappy = false;
         this.sick = false;
-        this.gift = "";
-        this.presents = new ArrayList<>();
+        this.present = new String[6];
     }
 
-    public ArrayList<String> getPresents() {
-        return presents;
+    public String[] presents() {
+        String gift = "Подарок " + String.valueOf(random.nextInt(300));
+        if (present[present.length - 1] != null) {
+            String[] newPresent = new String[present.length + (present.length / 2)];
+        } else {
+            for (int i = 0; i < present.length; i++) {
+                String temp = present[i];
+                if (temp == null) {
+                    present[i] = gift;
+                    break;
+                }
+            }
+        }
+        return present;
     }
 
-    public void setPresents(ArrayList<String> presents) {
-        this.presents = presents;
+    public double isUnHappyRet() {
+        if (unHappy) {
+            return 1.2d;
+        } else {
+            return 1d;
+        }
     }
 
-    public void addPresents(String gift) {
-        presents.add("Подарок " + gift);
+    public double unHungryRet() {
+        if (unHungry) {
+            return 1.5d;
+        } else {
+            return 1d;
+        }
     }
 
+    public double isSicRet() {
+        if (sick) {
+            return 2d;
+        } else {
+            return 1d;
+        }
+    }
+
+    public void setInfo() {
+        if (hungry < 50) {
+            setUnHungry(true);
+        }
+        if (hungry > 50) {
+            setUnHungry(false);
+        }
+        if (happy < 20) {
+            setUnHappy(true);
+        }
+        if (happy > 20) {
+            setUnHappy(false);
+        }
+    }
 
     public boolean isSick() {
         return sick;
@@ -100,6 +146,7 @@ public class Animal {
 
     public void addHungry(double hungry) {
         this.hungry += hungry;
+        setInfo();
     }
 
     public int getMoney() {
@@ -112,6 +159,7 @@ public class Animal {
 
     public void addMoney(int money) {
         this.money += money;
+        setInfo();
     }
 
     public double getClear() {
@@ -124,6 +172,7 @@ public class Animal {
 
     public void addClear(double clear) {
         this.clear += clear;
+        setInfo();
     }
 
     public double getHappy() {
@@ -136,6 +185,20 @@ public class Animal {
 
     public void addHappy(double happy) {
         this.happy += happy;
+        setInfo();
+    }
+
+    public void sick() {
+        final int randomNumber = random.nextInt(100);
+        if (clear < 50) {
+            if (randomNumber <= 30) {
+                sick = true;
+            }
+        } else {
+            if (randomNumber <= 10) {
+                sick = true;
+            }
+        }
     }
 
     @Override
@@ -151,7 +214,7 @@ public class Animal {
                 ", sick=" + sick +
                 ", unHungry=" + unHungry +
                 ", unHappy=" + unHappy +
-                ", presents=" + presents +
+                ", presents=" + Arrays.toString(present) +
                 '}';
     }
 }
