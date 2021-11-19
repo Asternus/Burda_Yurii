@@ -17,19 +17,19 @@ public class Store {
                 temp = s;
                 switch (s) {
                     case (1): {
-                        animal.setPresent(animal.presents());
+                        animal.presents();
                         animal.addMoney(-100);
                         animal.addHappy(20.0d);
                         break;
                     }
                     case (2): {
-                        animal.setPresent(animal.presents());
+                        animal.presents();
                         animal.addMoney(-150);
                         animal.addHappy(25.0d);
                         break;
                     }
                     case (3): {
-                        animal.setPresent(animal.presents());
+                        animal.presents();
                         animal.addMoney(-200);
                         animal.addHappy(30.0d);
                         break;

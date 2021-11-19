@@ -44,19 +44,22 @@ public class Animal {
         this.type = type;
         this.age = 1;
         this.hungry = 100.0d;
-        this.money = 0;
+        this.money = 11000;
         this.clear = 100.0d;
         this.happy = 50.0d;
         this.unHungry = false;
         this.unHappy = false;
         this.sick = false;
-        this.present = new String[6];
+        this.present = new String[3];
     }
 
-    public String[] presents() {
+    public void presents() {
         String gift = "Подарок " + String.valueOf(random.nextInt(300));
         if (present[present.length - 1] != null) {
             String[] newPresent = new String[present.length + (present.length / 2)];
+            newPresent = Arrays.copyOf(present, present.length + 1);
+            newPresent[present.length] = gift;
+            this.present = newPresent;
         } else {
             for (int i = 0; i < present.length; i++) {
                 String temp = present[i];
@@ -66,7 +69,6 @@ public class Animal {
                 }
             }
         }
-        return present;
     }
 
     public double isUnHappyRet() {
