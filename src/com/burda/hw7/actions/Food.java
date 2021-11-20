@@ -7,7 +7,7 @@ public class Food {
 
         double index = 1 * animal.unHungryRet() * animal.isUnHappyRet() * animal.isSicRet();
         animal.addHungry(5.0);
-        animal.addClear(2.0d * index);
+        animal.addClear(- 2.0d * index);
 
     }
 }

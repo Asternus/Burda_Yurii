@@ -16,8 +16,8 @@ public class Work {
 
         double index = 1 * animal.unHungryRet() * animal.isUnHappyRet() * animal.isSicRet();
         animal.addMoney(random.nextInt(20 - 5) + 5);
-        animal.addHungry(4.0d * index);
-        animal.addHappy(2.0d * index);
+        animal.addHungry(- 4.0d * index);
+        animal.addHappy(- 2.0d * index);
 
         if (++workCount == 6) {
             workCount = 0;

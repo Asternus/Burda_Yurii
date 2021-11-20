@@ -16,7 +16,7 @@ public class Animal {
     private boolean unHappy;
     private boolean unHungry;
     private String[] present;
-    final Random random = new Random();
+    private final Random random = new Random();
 
     public void setPresent(String[] present) {
         this.present = present;
