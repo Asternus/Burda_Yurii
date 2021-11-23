@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class SumTest {
 
     private UserInput userInputMock;
-    Sum sum = new Sum();
+    private Sum sum = new Sum();
 
     @Before
     public void setUp() {

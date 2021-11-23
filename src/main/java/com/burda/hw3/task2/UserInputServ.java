@@ -9,17 +9,17 @@ public class UserInputServ {
     double nu1;
     double nu2;
 
-    public char addSymbol() {
+    public char getSymbol() {
         symbol = scan.next().charAt(0);
         return symbol;
     }
 
-    public double addSNu1() {
+    public double getNumberFirst() {
         nu1 = scan.nextDouble();
         return nu1;
     }
 
-    public double addSNu2() {
+    public double getNumberSecond() {
         nu2 = scan.nextDouble();
         return nu2;
     }

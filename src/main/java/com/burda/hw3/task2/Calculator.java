@@ -7,13 +7,13 @@ public class Calculator {
         char temp;
         do {
             System.out.println("Введите символ");
-            char symbol = userInputServ.addSymbol();
+            char symbol = userInputServ.getSymbol();
             temp = symbol;
             if (symbol != '0') {
                 System.out.println("Введите первое число");
-                double number1 = userInputServ.addSNu1();
+                double number1 = userInputServ.getNumberFirst();
                 System.out.println("Введите второе число");
-                double number2 = userInputServ.addSNu2();
+                double number2 = userInputServ.getNumberSecond();
                 switch (symbol) {
                     case ('+'):
                         result = (number1 + number2);
