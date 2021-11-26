@@ -6,10 +6,11 @@ import java.util.Random;
 
 
 public class Passenger {
-    Random random = new Random();
     private String passenger;
+    private Random random = new Random();
 
     public String getPassenger() {
-        return passenger = "Passenger " + String.valueOf(random.nextInt(300));
+
+        return passenger = "Passenger " + random.nextInt(300);
     }
 }

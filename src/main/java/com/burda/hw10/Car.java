@@ -7,8 +7,8 @@ public abstract class Car implements Recovery {
     private Series series;
     private String year;
     private Colour colour;
-    public double fuel;
-    public double expenditure = 5.0d;
+    protected double fuel;
+    protected double expenditure = 5.0d;
 
     public Car(Series series, String year, Colour color, double fuel) {
         this.series = series;
@@ -19,11 +19,7 @@ public abstract class Car implements Recovery {
 
     public boolean getTraffic() {
         this.fuel = fuel - expenditure;
-        if (fuel <= 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(fuel <= 0);
     }
 
     @Override
