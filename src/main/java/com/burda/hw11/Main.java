@@ -3,9 +3,9 @@ package com.burda.hw11;
 public class Main {
     public static void main(String[] args) {
 
-        RotaryPhone rotaryPhone = new RotaryPhone(Variety.RED, Years.Y1991);
-        CellularPhone cellularPhone = new CellularPhone(Variety.RED, Years.Y1991);
-        Smartphone smartphone = new Smartphone(Variety.RED, Years.Y1991);
+        RotaryPhone rotaryPhone = new RotaryPhone(Colour.RED, Years.Y1991);
+        CellularPhone cellularPhone = new CellularPhone(Colour.RED, Years.Y1991);
+        Smartphone smartphone = new Smartphone(Colour.RED, Years.Y1991);
         Service service = new Service();
         service.testPhone(rotaryPhone);
         service.testPhone(cellularPhone);

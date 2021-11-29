@@ -1,13 +1,12 @@
 package com.burda.hw11;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class CellularPhone extends Phone {
     protected Scanner scanner = new Scanner(System.in);
 
-    public CellularPhone(Variety variety, Years years) {
-        super(variety, years);
+    public CellularPhone(Colour colour, Years years) {
+        super(colour, years);
     }
 
     @Override

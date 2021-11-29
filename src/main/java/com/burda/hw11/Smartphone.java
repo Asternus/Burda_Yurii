@@ -5,14 +5,8 @@ import java.util.Scanner;
 public class Smartphone extends Phone {
     protected Scanner scanner = new Scanner(System.in);
 
-    public Smartphone(Variety variety, Years years) {
-        super(variety, years);
-    }
-
-    public String inquiry() {
-        System.out.println("Введите номер абонента или ваш забпрос");
-        String a = scanner.nextLine();
-        return a;
+    public Smartphone(Colour colour, Years years) {
+        super(colour, years);
     }
 
     @Override
@@ -20,7 +14,7 @@ public class Smartphone extends Phone {
         System.out.println("Нажмите 1 для видеосвязи и 2 для голосового вызова");
         int b = scanner.nextInt();
         String a = "аудиосвязь" + inquiry();
-        String c =  "видеосвязь" + inquiry();
+        String c = "видеосвязь" + inquiry();
         return b == 1 ? a : c;
     }
 
@@ -29,6 +23,12 @@ public class Smartphone extends Phone {
         System.out.println("Введите ваше сообщение");
         String d = scanner.nextLine() + a;
         return d;
+    }
+
+    public String inquiry() {
+        System.out.println("Введите номер абонента или ваш забпрос");
+        String a = scanner.nextLine();
+        return a;
     }
 
     public void serfInternet() {

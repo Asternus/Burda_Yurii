@@ -1,16 +1,13 @@
 package com.burda.hw11;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public abstract class Phone implements PhoneMenu {
 
-    protected Variety variety;
+    protected Colour colour;
     protected Years years;
 
 
-    public Phone(Variety variety, Years years) {
-        this.variety = variety;
+    public Phone(Colour colour, Years years) {
+        this.colour = colour;
         this.years = years;
     }
 
@@ -25,13 +22,13 @@ public abstract class Phone implements PhoneMenu {
 
         Phone phone = (Phone) o;
 
-        if (variety != phone.variety) return false;
+        if (colour != phone.colour) return false;
         return years == phone.years;
     }
 
     @Override
     public int hashCode() {
-        int result = variety.hashCode();
+        int result = colour.hashCode();
         result = 31 * result + years.hashCode();
         return result;
     }

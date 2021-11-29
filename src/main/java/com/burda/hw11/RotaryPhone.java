@@ -1,12 +1,10 @@
 package com.burda.hw11;
 
-import com.sun.security.jgss.GSSUtil;
-
 import java.util.Scanner;
 
 public class RotaryPhone extends Phone {
-    public RotaryPhone(Variety variety, Years years) {
-        super(variety, years);
+    public RotaryPhone(Colour colour, Years years) {
+        super(colour, years);
     }
 
     @Override
