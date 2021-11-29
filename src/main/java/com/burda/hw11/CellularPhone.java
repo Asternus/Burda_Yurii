@@ -10,7 +10,7 @@ public class CellularPhone extends Phone {
     }
 
     @Override
-    String call() {
+    public String call() {
         System.out.println("Наберите номер для звонка");
         Scanner scanner = new Scanner(System.in);
         String a = scanner.nextLine();

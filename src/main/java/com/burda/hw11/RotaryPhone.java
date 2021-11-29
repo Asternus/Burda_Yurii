@@ -8,7 +8,7 @@ public class RotaryPhone extends Phone {
     }
 
     @Override
-    String call() {
+    public String call() {
         System.out.println("Наберите номер");
         Scanner scanner = new Scanner(System.in);
         String a = scanner.nextLine();
@@ -16,7 +16,7 @@ public class RotaryPhone extends Phone {
     }
 
     @Override
-    String sms() {
+    public String sms() {
         return "no sms";
     }
 

@@ -11,9 +11,9 @@ public abstract class Phone implements PhoneMenu {
         this.years = years;
     }
 
-    abstract String call();
+    abstract public String call();
 
-    abstract String sms();
+    abstract public String sms();
 
     @Override
     public boolean equals(Object o) {

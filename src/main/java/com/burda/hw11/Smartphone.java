@@ -10,7 +10,7 @@ public class Smartphone extends Phone {
     }
 
     @Override
-    String call() {
+    public String call() {
         System.out.println("Нажмите 1 для видеосвязи и 2 для голосового вызова");
         int b = scanner.nextInt();
         String a = "аудиосвязь" + inquiry();
@@ -18,7 +18,7 @@ public class Smartphone extends Phone {
         return b == 1 ? a : c;
     }
 
-    public String sms() {
+     public String sms() {
         String a = inquiry();
         System.out.println("Введите ваше сообщение");
         String d = scanner.nextLine() + a;
