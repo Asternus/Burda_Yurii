@@ -1,9 +1,6 @@
 package com.burda.hw14;
 
-import lombok.Value;
-
 import java.util.List;
-
 
 public class Util<T> implements Multiplier<Number> {
     T value;
