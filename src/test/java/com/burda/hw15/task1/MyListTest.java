@@ -1,6 +1,5 @@
 package com.burda.hw15.task1;
 
-import com.burda.hw14.task1.MyList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
