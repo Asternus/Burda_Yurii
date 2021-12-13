@@ -1,4 +1,4 @@
-package com.burda.hw15.task1;
+package com.burda.hw14.task1;
 
 public class MyNode<E> {
     public E value;
