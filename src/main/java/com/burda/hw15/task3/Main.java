@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-    final static List<String> animal = new ArrayList<String>();
+    final static List<String> animal = new ArrayList<>();
 
     public static void main(String[] args) {
         animal.add("Dog");
