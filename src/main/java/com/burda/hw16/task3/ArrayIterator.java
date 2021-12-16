@@ -18,8 +18,9 @@ public class ArrayIterator<T> implements Iterator<T> {
 
     @Override
     public T next() {
-        if(!hasNext())
+        if (!hasNext()) {
             throw new NoSuchElementException();
+        }
         return array[index++];
     }
 }

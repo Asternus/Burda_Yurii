@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        buildDictionaryWithMap("Я люблю енотов, я кот я кот, кот это хорошо");
+        buildDictionaryWithMap("Я люблю енотов, коты хорошие, кот это хорошо");
     }
 
     public static void buildDictionaryWithMap(String text) {

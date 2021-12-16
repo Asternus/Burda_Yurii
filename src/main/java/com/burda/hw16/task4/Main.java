@@ -19,7 +19,7 @@ public class Main {
         studentList.add(new Student("Kate", "3-J", 3, 2));
         studentList.add(new Student("Kris", "3-J", 3, 1));
 
-        System.out.println(studentList.toString());
+        System.out.println(studentList);
         printStudents(studentList, 4);
         System.out.println(delStudents());
     }
@@ -34,7 +34,6 @@ public class Main {
     public static void printStudents(List<Student> students, int grade) {
         students.stream().
                 filter(student -> student.getGrade() == grade).
-                map(Student::toString).
                 forEach(System.out::println);
     }
 }
