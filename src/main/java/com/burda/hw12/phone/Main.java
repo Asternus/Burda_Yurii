@@ -1,7 +1,5 @@
 package com.burda.hw12.phone;
 
-import java.util.Optional;
-
 public class Main {
     public static void main(String[] args) {
         String phone = "016/161616";
