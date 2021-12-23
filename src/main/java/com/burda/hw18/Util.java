@@ -15,30 +15,14 @@ public class Util {
         matcher = pattern.matcher(temp);
         while (matcher.find()) {
             switch (type) {
-                case ("from"):
-                    box.setFrom(matcher.group(1));
-                    break;
-                case ("material"):
-                    box.setMaterial(matcher.group(1));
-                    break;
-                case ("color"):
-                    box.setColor(matcher.group(1));
-                    break;
-                case ("unit"):
-                    box.getMaxLiftingCapacity().setUnit(matcher.group(1));
-                    break;
-                case ("max"):
-                    box.getMaxLiftingCapacity().setValue(Integer.parseInt(matcher.group(1)));
-                    break;
-                case ("name"):
-                    box.getCargo().setName(matcher.group(1));
-                    break;
-                case ("class"):
-                    box.getCargo().setClas(matcher.group(1));
-                    break;
-                case ("delivery"):
-                    box.setDeliveryDate(LocalDateTime.parse(matcher.group(1), formatter));
-                    break;
+                case ("from") -> box.setFrom(matcher.group(1));
+                case ("material") -> box.setMaterial(matcher.group(1));
+                case ("color") -> box.setColor(matcher.group(1));
+                case ("unit") -> box.getMaxLiftingCapacity().setUnit(matcher.group(1));
+                case ("max") -> box.getMaxLiftingCapacity().setValue(Integer.parseInt(matcher.group(1)));
+                case ("name") -> box.getCargo().setName(matcher.group(1));
+                case ("class") -> box.getCargo().setClas(matcher.group(1));
+                case ("delivery") -> box.getDateTime().setDeliveryDate(LocalDateTime.parse(matcher.group(1), formatter));
             }
         }
     }

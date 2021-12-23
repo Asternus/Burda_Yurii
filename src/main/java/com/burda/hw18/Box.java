@@ -2,7 +2,6 @@ package com.burda.hw18;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
 
 @Data
 public class Box {
@@ -11,5 +10,5 @@ public class Box {
     private String color;
     private Cargo cargo = new Cargo();
     private MaxLiftingCapacity maxLiftingCapacity = new MaxLiftingCapacity();
-    private LocalDateTime deliveryDate;
+    private DateTime dateTime = new DateTime();
 }

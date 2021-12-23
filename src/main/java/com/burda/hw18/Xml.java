@@ -14,14 +14,14 @@ public class Xml {
         String temp;
         try {
             while ((temp = bufferedReader.readLine()) != null) {
-                Util.read(".*from=\"(.*?)\".*", temp, "from", box);
-                Util.read(".*material=\"(.*?)\".*", temp, "material", box);
-                Util.read("<color>(.*)<.color>*", temp, "color", box);
-                Util.read(".*unit=\"(.*?)\".*", temp, "unit", box);
-                Util.read("<max-lifting-capacity.*>(\\d*)<.max-lifting-capacity>*", temp, "max", box);
-                Util.read("<name>(.*)<.name>*", temp, "name", box);
-                Util.read("<class>(.*)<.class>*", temp, "class", box);
-                Util.read("<delivery-date>(.*)<.delivery-date>*", temp, "delivery", box);
+                Util.read(StringReg.xmlFrom, temp, "from", box);
+                Util.read(StringReg.xmlMaterial, temp, "material", box);
+                Util.read(StringReg.xmlColor, temp, "color", box);
+                Util.read(StringReg.xmlUnit, temp, "unit", box);
+                Util.read(StringReg.xmlMax, temp, "max", box);
+                Util.read(StringReg.xmlName, temp, "name", box);
+                Util.read(StringReg.xmlClass, temp, "class", box);
+                Util.read(StringReg.xmlDelivery, temp, "delivery", box);
             }
             bufferedReader.close();
         } catch (IOException e) {

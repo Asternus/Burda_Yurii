@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class Json {
-    private static Box box = new Box();
+    private static final Box box = new Box();
     private static final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
     public static Box readJson(String string) {
@@ -14,14 +14,14 @@ public class Json {
         String temp;
         try {
             while ((temp = bufferedReader.readLine()) != null) {
-                Util.read("\"from\":.\"(.*?)\"", temp, "from", box);
-                Util.read("\"material\":.\"(.*?)\"", temp, "material", box);
-                Util.read("\"color\":.\"(.*?)\"", temp, "color", box);
-                Util.read("\"unit\":.\"(.*?)\"", temp, "unit", box);
-                Util.read("\"value\":.(\\d*)", temp, "max", box);
-                Util.read("\"name\":.\"(.*)\"", temp, "name", box);
-                Util.read("\"class\":.\"(.*)\"", temp, "class", box);
-                Util.read("\"delivery-date\":.\"(.*)\"", temp, "delivery", box);
+                Util.read(StringReg.jsonFrom, temp, "from", box);
+                Util.read(StringReg.jsonMaterial, temp, "material", box);
+                Util.read(StringReg.jsonColor, temp, "color", box);
+                Util.read(StringReg.jsonUnit, temp, "unit", box);
+                Util.read(StringReg.jsonMax, temp, "max", box);
+                Util.read(StringReg.jsonName, temp, "name", box);
+                Util.read(StringReg.jsonClass, temp, "class", box);
+                Util.read(StringReg.jsonDelivery, temp, "delivery", box);
             }
             bufferedReader.close();
         } catch (IOException e) {
