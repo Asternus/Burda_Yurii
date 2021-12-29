@@ -1,4 +1,4 @@
-package com.burda.modul2.model;
+package com.burda.module2.model;
 
 public class Television extends Sale {
     @Override

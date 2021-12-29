@@ -1,7 +1,7 @@
-package com.burda.modul2;
+package com.burda.module2;
 
-import com.burda.modul2.model.Customer;
-import com.burda.modul2.service.ShopService;
+import com.burda.module2.model.Customer;
+import com.burda.module2.service.ShopService;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
-package com.burda.modul2.model;
+package com.burda.module2.model;
 
-import com.burda.modul2.service.ShopService;
+import com.burda.module2.service.ShopService;
 
 import java.util.ArrayList;
 

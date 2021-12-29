@@ -1,6 +1,6 @@
-package com.burda.modul2.service;
+package com.burda.module2.service;
 
-import com.burda.modul2.model.*;
+import com.burda.module2.model.*;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

@@ -1,6 +1,6 @@
-package com.burda.modul2.service;
+package com.burda.module2.service;
 
-import com.burda.modul2.model.Customer;
+import com.burda.module2.model.Customer;
 
 import java.util.Random;
 

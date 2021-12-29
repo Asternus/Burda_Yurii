@@ -1,4 +1,4 @@
-package com.burda.modul2.model;
+package com.burda.module2.model;
 
 import lombok.Getter;
 import lombok.ToString;
