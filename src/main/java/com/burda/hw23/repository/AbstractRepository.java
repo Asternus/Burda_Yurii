@@ -4,7 +4,7 @@ import lombok.SneakyThrows;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 public abstract class AbstractRepository {
     @SneakyThrows
@@ -24,15 +24,14 @@ public abstract class AbstractRepository {
             String clear1 = "TRUNCATE TABLE device CASCADE";
             String alter1 = "ALTER SEQUENCE device_device_id_seq RESTART WITH 1";
             try (Connection conn = createCon();
-                 PreparedStatement preparedStatement = conn.prepareStatement(clear);
-                 PreparedStatement preparedStatement1 = conn.prepareStatement(alter);
-                 PreparedStatement preparedStatement2 = conn.prepareStatement(clear1);
-                 PreparedStatement preparedStatement3 = conn.prepareStatement(alter1)) {
-                int row = preparedStatement.executeUpdate();
-                preparedStatement1.execute();
-                preparedStatement2.execute();
-                int row1 = preparedStatement3.executeUpdate();
-                System.out.println("restartBd del rows: " + row + row1);
+                 Statement statement = conn.createStatement()) {
+                statement.addBatch(clear);
+                statement.addBatch(alter);
+                statement.addBatch(clear1);
+                statement.addBatch(alter1);
+                statement.executeBatch();
+                statement.clearBatch();
+                System.out.println("restartBd");
             }
         } catch (Exception ex) {
             System.out.println("Connection failed..." + ex);

@@ -20,7 +20,6 @@ public class DeviceRepository extends AbstractRepository {
                     "('WorkRobot', 'Terminator', 12000.0, '2021-08-08', 'ITRobots', true, 4)";
             try (Connection conn = createCon();
                  PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-                preparedStatement.execute();
                 int rows = preparedStatement.executeUpdate();
                 System.out.println("add Lines Device: " + rows);
             }
@@ -52,17 +51,17 @@ public class DeviceRepository extends AbstractRepository {
         }
     }
 
-    public static void updateDevice(int id) {
+    public static void updateDevice(int id, Device device) {
         try {
             String sql = "UPDATE device SET type=?, name =?, price = ?, date = ?, description = ?, availability = ? WHERE device_id = ?";
             try (Connection conn = createCon();
                  PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-                preparedStatement.setString(1, "Smart");
-                preparedStatement.setString(2, "SmartName");
-                preparedStatement.setDouble(3, 1800);
-                preparedStatement.setDate(4, Date.valueOf("2021-05-04"));
-                preparedStatement.setString(5, "SmartUpdate");
-                preparedStatement.setBoolean(6, false);
+                preparedStatement.setString(1, device.getType());
+                preparedStatement.setString(2, device.getName());
+                preparedStatement.setDouble(3, device.getPrice());
+                preparedStatement.setDate(4, device.getDate());
+                preparedStatement.setString(5, device.getDescription());
+                preparedStatement.setBoolean(6, device.isAvailability());
                 preparedStatement.setInt(7, id);
                 preparedStatement.executeUpdate();
             }

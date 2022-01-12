@@ -18,7 +18,6 @@ public class FactoryRepository extends AbstractRepository {
             String sql = "INSERT INTO factory (name, country) VALUES ('Phone', 'China'), ('Television', 'USA'), ('Laptop', 'Canada'), ('Robots', 'Japan')";
             try (Connection conn = createCon();
                  PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-                preparedStatement.execute();
                 int rows = preparedStatement.executeUpdate();
                 System.out.println("add Lines Factory: " + rows);
             }
