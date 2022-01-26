@@ -30,6 +30,10 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
+
+        <mapping class="com.burda.hw24.entity.Device"/>
+        <mapping class="com.burda.hw24.entity.Factory"/>
+
         <mapping class="com.burda.hw25.entity.Ticket"/>
         <mapping class="com.burda.hw25.entity.Film"/>
         <mapping class="com.burda.hw25.entity.Users"/>
