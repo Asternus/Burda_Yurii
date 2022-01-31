@@ -11,17 +11,17 @@ echo "Number of discriminant roots $dis"
 if [ $dis -gt 0 ]
 then
 
-q=$(awk -v x=$a 'BEGIN{print sqrt(x)}')
+q=$(awk -v x=$dis 'BEGIN{print sqrt(x)}')
 x1=$(( (-$b + $q)/2*$a ))
 x2=$(( (-$b - $q)/2*$a ))
 
 echo "x1 = $x1 x2 = $x2" > answer.math
-echo "Answer file created"
+echo "answer file created" 
 
 elif [ $dis -eq 0 ]
 then
 
-q=$(awk -v x=$a 'BEGIN{print sqrt(x)}')
+q=$(awk -v x=$dis 'BEGIN{print sqrt(x)}')
 x1=$(( (-$b + $q)/2*$a ))
 echo "x1 = $x1" > answer.math
 echo "The only solution answer file created"
