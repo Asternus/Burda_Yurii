@@ -1,0 +1,33 @@
+#!/bin/bash
+echo -n "Enter a number:"
+read a
+echo -n "Enter b number:"
+read b
+echo -n "Enter c number:"
+read c
+dis=$(( $b * $b - 4 * $a * $c ))
+echo "Number of discriminant roots $dis"
+
+if [ $dis -gt 0 ]
+then
+
+sq=$(echo "sqrt($dis)" | bc)
+x1=$(( (-$b + $sq)/2*$a ))
+x2=$(( (-$b - $sq)/2*$a ))
+
+echo "x1 = $x1 x2 = $x2" > answer.math
+echo "Answer file created"
+
+elif [ $dis -eq 0 ]
+then
+
+sq=$(echo "sqrt($dis)" | bc)
+x1=$(( (-$b + $sq)/2*$a ))
+echo "x1 = $x1" > answer.math
+echo "The only solution answer file created"
+
+else
+echo "Roots less than 0"
+echo "Roots less than 0" > answer.math
+fi
+
