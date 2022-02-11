@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MyListTest {
+public class UtilListTest {
 
     final private MyList<Integer> myList = new MyList<>();
 

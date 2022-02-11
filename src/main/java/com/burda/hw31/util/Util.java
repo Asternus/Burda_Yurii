@@ -2,7 +2,7 @@ package com.burda.hw31.util;
 
 public class Util {
 
-    public void createTread() {
+    public void createTreadAndQueueStart() {
         for (int i = 50; i >= 0; i--) {
             String name = "Hello from thread № " + i;
             Runnable r0 = () -> System.out.println(name);

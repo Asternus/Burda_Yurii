@@ -1,7 +1,7 @@
 package com.burda.hw31;
 
 import com.burda.hw31.thread.MyThread;
-import com.burda.hw31.util.MyList;
+import com.burda.hw31.util.UtilList;
 import com.burda.hw31.util.Util;
 
 import java.util.ArrayList;
@@ -9,17 +9,18 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Util util = new Util();
-        util.createTread();
-        MyList myList = new MyList();
 
         List<Integer> integerList = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
             integerList.add(i);
         }
 
-        MyThread myThread1 = new MyThread(myList.getNumbersList1(integerList));
-        MyThread myThread2 = new MyThread(myList.getNumbersList2(integerList));
+        Util util = new Util();
+        util.createTreadAndQueueStart();
+        UtilList utilList = new UtilList();
+
+        MyThread myThread1 = new MyThread(utilList.getListOfFirstPart(integerList));
+        MyThread myThread2 = new MyThread(utilList.getListOfSecondPart(integerList));
 
         try {
             myThread1.start();
