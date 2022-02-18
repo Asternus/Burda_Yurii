@@ -1,4 +1,4 @@
-package com.burda.hw25.hw32.hippodrome;
+package com.burda.hw32.hippodrome;
 
 import java.util.Scanner;
 
