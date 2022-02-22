@@ -3,8 +3,8 @@ package com.burda.hw32.model;
 import java.util.concurrent.Semaphore;
 
 public class Run implements Runnable {
-    Semaphore sem;
-    CommonResource res;
+    private Semaphore sem;
+    private CommonResource res;
 
     public Run(Semaphore sem, CommonResource res) {
         this.sem = sem;
@@ -15,7 +15,7 @@ public class Run implements Runnable {
     public void run() {
         try {
             sem.acquire();
-            res.x += 2;
+            res.setX(2);
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         } finally {

@@ -4,5 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class CommonResource {
-    int x = 50;
+    private int x = 50;
+
+    public void setX(int x) {
+        this.x += x;
+    }
 }
