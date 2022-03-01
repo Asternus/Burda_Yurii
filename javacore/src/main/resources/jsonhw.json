@@ -12,7 +12,3 @@
   },
   "delivery-date": "2021-09-20T11:07:00"
 }
-
-protected static String jsonFrom = "Tele*";
-"[Tele]"
-protected static String jsonFrom = "\"from\":.\"(.*?)\"";
