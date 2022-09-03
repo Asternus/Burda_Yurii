@@ -6,7 +6,12 @@
 
     <groupId>groupId</groupId>
     <artifactId>Burda_Yurii</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Servlets</module>
+        <module>javacore</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
